@@ -90,7 +90,8 @@ function activateMenuLink(elem){
         menu_items.forEach(item =>{
             setActive(item, false);
         });
-        setActive(elem, true);
+        try {setActive(elem, true);} catch (error) {}
+        
 }
 
 // Scroll to anchor ID 
@@ -164,7 +165,8 @@ document.addEventListener("click", (event) => {
         case "BUTTON":
             // show Back to Top button
             if (event.target.getAttribute('id')==='toTopBtn'){
-                [document.body.scrollTop, document.documentElement] = [0, 0];
+                [document.body.scrollTop, document.documentElement.scrollTop] = [0, 0];
+                activateMenuLink(null);
             }
             break;
     } 
