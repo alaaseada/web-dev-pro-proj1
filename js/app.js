@@ -31,12 +31,7 @@ let timer = null;
 // Check if an element is currently at the display area
 function onSpot(element){
     const boundries = element.getBoundingClientRect();
-    return (
-        boundries.top >=0 &&
-        boundries.left >= 0 &&
-        boundries.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        boundries.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
+    return (boundries.top >=0 &&  boundries.top <= 150);
 }
 
 // Construct a new link element for the nav menu
@@ -181,7 +176,6 @@ document.addEventListener('scroll', () => {
     activateSection();
     checkToTopBtn();
 });
-
 
 
 
